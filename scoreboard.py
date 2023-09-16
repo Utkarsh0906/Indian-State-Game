@@ -27,7 +27,7 @@ class ScoreBoard(Turtle):
         self.write(f"Score = {self.score}",align = "Center",font = ("Arial",24,"bold"))
         self.goto(140,300)
         self.write(f"High Score = {self.high_score}",align = "Left", font = ("Arial",16,"bold"))
-        if(self.score == 30):
+        if(self.score == 29):
             self.goto(-140,300)
             self.write(f"Winner",align = "Left", font = ("Arial",16,"bold"))
     
@@ -53,7 +53,7 @@ class ScoreBoard(Turtle):
     def game_won(self):
         file.seek(0)
         file.truncate()
-        file.write(str(30))
+        file.write(str(29))
         self.clear()
         self.goto(0,0)
         self.write("You Won!!",align = "Center",font = ("Arial",50,"bold"))
