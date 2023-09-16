@@ -30,7 +30,9 @@ while(game_on):
     elif(score.send_score() == 30):
         score.game_won()
         game_on = False
+    
     elif(user_input == 'Exit'):
         score.game_over()
         game_on = False
+
 s.exitonclick()
