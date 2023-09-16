@@ -26,13 +26,13 @@ while(game_on):
         t.write(user_input)
         score.new_score()
         guessed_state.append(user_input)
-        
-    elif(score.send_score() == 29):
-        score.game_won()
-        game_on = False
     
     elif(user_input == 'Exit'):
         score.game_over()
+        game_on = False
+
+    if(score.send_score() == 29):
+        score.game_over(True)
         game_on = False
 
 s.exitonclick()
