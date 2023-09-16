@@ -27,7 +27,7 @@ while(game_on):
         score.new_score()
         guessed_state.append(user_input)
         
-    elif(score.send_score() == 30):
+    elif(score.send_score() == 29):
         score.game_won()
         game_on = False
     
