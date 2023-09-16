@@ -36,7 +36,7 @@ class ScoreBoard(Turtle):
         return self.score
     
     #displaying gameover
-    def game_over(self):
+    def game_over(self,game_won = False):
         if(self.score>self.high_score):
             self.high_score = self.score
             file.seek(0)
@@ -44,19 +44,12 @@ class ScoreBoard(Turtle):
             file.write(str(self.high_score))
         self.clear()
         self.goto(0,0)
-        self.write("GAME OVER!!",align = "Center",font = ("Arial",50,"bold"))
-        self.goto(0,-50)
-        self.write(f"Score = {self.score}",align = "Center",font = ("Arial",25,"bold"))
-        self.goto(0,-100)
-        self.write(f"High Score = {self.high_score}",align = "Center",font = ("Arial",25,"bold"))
-    
-    def game_won(self):
-        file.seek(0)
-        file.truncate()
-        file.write(str(29))
-        self.clear()
-        self.goto(0,0)
-        self.write("You Won!!",align = "Center",font = ("Arial",50,"bold"))
+        
+        if(game_won):
+            self.write("You Won!!",align = "Center",font = ("Arial",50,"bold"))
+        else:
+            self.write("GAME OVER!!",align = "Center",font = ("Arial",50,"bold"))
+            
         self.goto(0,-50)
         self.write(f"Score = {self.score}",align = "Center",font = ("Arial",25,"bold"))
         self.goto(0,-100)
