@@ -24,7 +24,7 @@ class ScoreBoard(Turtle):
         self.score += 1
         self.clear()
         self.goto(0,300)
-        self.write(f"Level = {self.score}",align = "Center",font = ("Arial",24,"bold"))
+        self.write(f"Score = {self.score}",align = "Center",font = ("Arial",24,"bold"))
         self.goto(140,300)
         self.write(f"High Score = {self.high_score}",align = "Left", font = ("Arial",16,"bold"))
         if(self.score == 30):
