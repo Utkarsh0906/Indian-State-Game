@@ -30,6 +30,7 @@ while(game_on):
     elif(user_input == 'Exit'):
         score.game_over()
         game_on = False
+        print(f"The states that you missed:\n{[x for x in states if x not in guessed_state]}")
 
     if(score.send_score() == 29):
         score.game_over(True)
